@@ -1,4 +1,3 @@
-package JAVA;
 // Experiment 3: Execute the first Program to print “Welcome to LNMCBM in java.
 
 public class Exp03 {

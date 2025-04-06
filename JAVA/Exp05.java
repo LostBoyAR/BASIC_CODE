@@ -1,4 +1,3 @@
-package JAVA;
 // Experiment 5: Write a programme to print 
 // (i) Sum (ii) Multiplication (iii) Division 
 // (iv) Remainder (v) Subtraction 

@@ -1,4 +1,3 @@
-package JAVA;
 // Experiment 4: Write a programme in java to print the values of all data types (int, char, long, double, Boolean, String )  
 
 public class Exp04 {
