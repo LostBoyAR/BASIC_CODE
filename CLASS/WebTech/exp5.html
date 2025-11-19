@@ -1,0 +1,33 @@
+ <!-- Write a programme to print (i) sum (ii) Multiplication (iii) Division (iv) Remainder  (v) Subtraction  -->
+
+<html>
+<head>
+    <title>Experiment 5</title>
+    <script>
+        function calculation() 
+        {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            document.getElementById("results").innerText =
+                "Addition: " + (num1 + num2) + 
+                "\nSubtraction: " + (num1 - num2) +
+                "\nMultiplication: " + (num1 * num2) +
+                "\nDivision: " + (num1 / num2) +
+                "\nRemainder: " + (num1 % num2);
+        }
+    </script>
+</head>
+<body>
+    <h2>Arithmetic Operations</h2>
+    <label>Enter first number:</label><br>
+    <input type="number" id="num1" required><br><br>
+    <label>Enter second number:</label><br>
+    <input type="number" id="num2" required><br><br>
+    <button onclick="calculation()">Calculate</button>
+    <h3>Results:</h3>
+    <p id="results"></p>
+</body>
+</html>
+
+

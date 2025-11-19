@@ -1,0 +1,72 @@
+<!-- Create Admission Form of our college.   -->
+
+<html>
+<head>
+    <title>Experiment 8</title>
+</head>
+<body>
+    <!-- <center> -->
+        <!-- <h2>College Admission Form</h2>
+        <form>
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="course">Select Course:</label><br>
+            <select id="course" name="course" required>
+                <option value="">--Select--</option>
+                <option value="btech">B.Tech</option>
+                <option value="bca">BCA</option>
+                <option value="bba">BBA</option>
+                <option value="mba">MBA</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit">
+        </form> -->
+    <h1>College Admission Form</h1>
+    <form>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label for="fathername">Father's Name:</label><br>
+        <input type="text" id="fathername" required><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female" required> Female
+        <input type="radio" name="gender" value="Other" required> Other<br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" rows="3" cols="30" required></textarea><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required><br><br>
+
+        <label for="mobile">Mobile Number:</label><br>
+        <input type="tel" id="mobile" pattern="[0-9]{10}" required><br><br>
+
+        <label>Course Applied For:</label><br>
+        <select required>
+            <option value="">--Select--</option>
+            <option value="b.tech">B.Tech</option>
+            <option value="bca">BCA</option>
+            <option value="bba">BBA</option>
+            <option value="mba">MBA</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Clear Form">
+    </form>
+    <!-- </center> -->
+</html>

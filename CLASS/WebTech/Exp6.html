@@ -1,0 +1,79 @@
+<!-- Write a programme to get 2 numbers then print larger number. -->
+
+<html>
+<head>
+    <title>Experiment 6</title>
+    <script>
+        function larger() {
+            var a = parseFloat(document.getElementById("num1").value);
+            var b = parseFloat(document.getElementById("num2").value);
+            var result = "";
+            if (a > b) {
+                result = "Larger number is " + a;
+            } else if (b > a) {
+                result = "Larger number is " + b;
+            } else {
+                result = "Both numbers are equal.";
+            }
+            document.getElementById("output").innerText = result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Larger Number Finder</h2>
+    <label for="num1">Enter first number:</label>
+    <input type="number" id="num1" required><br><br>
+    <label for="num2">Enter second number:</label>
+    <input type="number" id="num2" required><br><br>
+    <button onclick="larger()">Find Larger Number</button>
+    <h2>Result:</h2>
+    <p id="output"></p>
+</body>
+</html>
+
+<!-- Write a programme to get 2 numbers then print larger number. -->
+
+<!-- <html>
+<head>
+    <title>Larger Number Finder</title>
+    <script>
+        function findLarger() {
+            var a = parseFloat(document.getElementById("num1").value);
+            var b = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("output").innerText = "Please enter both numbers.";
+                return;
+            }
+
+            var result = "";
+            if (a > b) {
+                result = "Larger number is: " + a;
+            } else if (b > a) {
+                result = "Larger number is: " + b;
+            } else {
+                result = "Both numbers are equal.";
+            }
+            document.getElementById("output").innerText = result;
+        }
+
+        function clearScreen() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("output").innerText = "";
+            document.getElementById("num1").focus();
+        }
+    </script>
+</head>
+<body>
+    <h2>Larger Number Finder</h2>
+    <label>Enter first number:</label>
+    <input type="number" id="num1" required><br><br>
+    <label>Enter second number:</label>
+    <input type="number" id="num2" required><br><br>
+    <button type="button" onclick="findLarger()">Find Larger Number</button>
+    <button type="button" onclick="clearScreen()">Clear</button>
+    <h2>Result:</h2>
+    <p id="output"></p>
+</body>
+</html> -->

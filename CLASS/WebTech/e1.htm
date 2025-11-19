@@ -1,0 +1,163 @@
+<!-- Write javascript program of  admission form validation Name and Course should not be blank.
+
+<html>
+<head>
+    <title>Admission Form Validation</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var course = document.getElementById("course").value;
+            var errorMsg = "";
+
+            if (name.trim() === "") {
+                errorMsg += "Name cannot be blank.\n";
+            }
+            if (course === "") {
+                errorMsg += "Please select a course.\n";
+            }
+
+            if (errorMsg !== "") {
+                alert(errorMsg);
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <h2>College Admission Form</h2>
+    <form onsubmit="return validateForm()">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="course">Select Course:</label><br>
+        <select id="course" name="course">
+            <option value="">--Select--</option>
+            <option value="btech">B.Tech</option>
+            <option value="bca">BCA</option>
+            <option value="bba">BBA</option>
+            <option value="mba">MBA</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear Form">
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admission Form with Validation</title>
+
+    <script>
+        function validateForm() {
+            let name = document.forms["admissionForm"]["fullname"].value;
+            let course = document.forms["admissionForm"]["course"].value;
+
+            if (name == "" && course == "") {
+                alert("Name should not be blank!\nPlease select a course!");
+                return false;
+            }
+
+            if (name == "") {
+                alert("Name should not be blank!");
+                return false;
+            }
+
+            if (course == "") {
+                alert("Please select a course!");
+                return false;
+            }
+
+            return true;  
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>Admission Form</h1>
+
+    <form name="admissionForm" onsubmit="return validateForm()">
+        
+        <label>Full Name:</label><br>
+        <input type="text" name="fullname"><br><br>
+
+        <label>Course:</label><br>
+        <select name="course">
+            <option value="">-- Select Course --</option>
+            <option value="BCA">BCA</option>
+            <option value="BBA">BBA</option>
+            <option value="B.Sc IT">B.Sc IT</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset">
+    </form>
+
+</body>
+</html> -->
+
+
+<html>
+<head>
+    <title>Admission Form Validation</title>
+    <script>
+        function validation() {
+            var name = document.getElementById("name").value;
+            var course = document.getElementById("course").value;
+
+            if (name == "" && course == "") {
+                alert("Full Name should not be blank!\nPlease select a course!");
+                return false;
+            }
+
+            if (name == "") {
+                alert("Full Name should not be blank!");
+                return false;
+            }
+
+            if (course == "") {
+                alert("Please select a course!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Admission Form</h1>
+
+    <form onsubmit="return validation()">
+        
+        <label>Full Name:</label><br>
+        <input type="text" id="name"><br><br>
+
+        <label>Course:</label><br>
+        <select id="course">
+            <option value="">--Select--</option>
+            <option value="b.tech">B.Tech</option>
+            <option value="bca">BCA</option>
+            <option value="mca">MCA</option>
+            <option value="bba">BBA</option>
+            <option value="mba">MBA</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset">
+    </form>
+
+</body>
+</html>

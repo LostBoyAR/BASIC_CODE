@@ -1,0 +1,54 @@
+<!-- Write javascript program of  admission form validation Name and Course should not be blank. -->
+
+<html>
+<head>
+    <title>Admission Form Validation</title>
+    <script>
+        function validation() {
+            var name = document.getElementById("name").value;
+            var course = document.getElementById("course").value;
+
+            if (name == "" && course == "") {
+                alert("Full Name should not be blank!\nPlease select a course!");
+                return false;
+            }
+
+            if (name == "") {
+                alert("Full Name should not be blank!");
+                return false;
+            }
+
+            if (course == "") {
+                alert("Please select a course!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Admission Form</h1>
+
+    <form onsubmit="return validation()">
+        
+        <label>Full Name:</label><br>
+        <input type="text" id="name"><br><br>
+
+        <label>Course:</label><br>
+        <select id="course">
+            <option value="">--Select--</option>
+            <option value="b.tech">B.Tech</option>
+            <option value="bca">BCA</option>
+            <option value="mca">MCA</option>
+            <option value="bba">BBA</option>
+            <option value="mba">MBA</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset">
+    </form>
+
+</body>
+</html>
