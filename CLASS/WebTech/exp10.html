@@ -9,12 +9,12 @@
             var course = document.getElementById("course").value;
 
             if (name == "" && course == "") {
-                alert("Full Name should not be blank!\nPlease select a course!");
+                alert("Name should not be blank!\nPlease select a course!");
                 return false;
             }
 
             if (name == "") {
-                alert("Full Name should not be blank!");
+                alert("Name should not be blank!");
                 return false;
             }
 
@@ -33,7 +33,7 @@
 
     <form onsubmit="return validation()">
         
-        <label>Full Name:</label><br>
+        <label>Name:</label><br>
         <input type="text" id="name"><br><br>
 
         <label>Course:</label><br>
@@ -46,7 +46,7 @@
             <option value="mba">MBA</option>
         </select><br><br>
 
-        <input type="submit" value="Submit Form">
+        <input type="submit" value="Submit">
         <input type="reset" value="Reset">
     </form>
 
