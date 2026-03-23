@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Q2",
+      "request": "launch",
+      "mainClass": "coaching.Q2",
+      "projectName": "BASIC_CODE_216bcfdd"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",

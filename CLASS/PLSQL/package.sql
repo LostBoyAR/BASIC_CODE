@@ -1,16 +1,16 @@
-CREATE TABLE student1 (
-  roll    NUMBER PRIMARY KEY,
-  sname   VARCHAR2(30),
-  marks   NUMBER
-);
+-- CREATE TABLE student1 (
+--   roll    NUMBER PRIMARY KEY,
+--   sname   VARCHAR2(30),
+--   marks   NUMBER
+-- );
 
-INSERT INTO student1 VALUES (1, 'Ram', 25);
-INSERT INTO student1 VALUES (2, 'Shyam', 35);
-INSERT INTO student1 VALUES (3, 'Rohit', 55);
-INSERT INTO student1 VALUES (4, 'Nishu', 30);
-INSERT INTO student1 VALUES (5, 'Ravi', 60);
+-- INSERT INTO student1 VALUES (1, 'Ram', 25);
+-- INSERT INTO student1 VALUES (2, 'Shyam', 35);
+-- INSERT INTO student1 VALUES (3, 'Rohit', 55);
+-- INSERT INTO student1 VALUES (4, 'Nishu', 30);
+-- INSERT INTO student1 VALUES (5, 'Ravi', 60);
 
-COMMIT;
+-- COMMIT;
 
 --Create a PL/SQL package to manage student1 results.
 
@@ -22,16 +22,12 @@ COMMIT;
 
 set SERVEROUTPUT ON;
 
--- Package for Student Result Management
-
--- PACKAGE SPECIFICATION
 CREATE OR REPLACE PACKAGE pkg_result IS
   PROCEDURE addGraceMarks(sid NUMBER);
   FUNCTION checkPass(sid NUMBER) RETURN BOOLEAN;
 END pkg_result;
 /
 
--- PACKAGE BODY
 CREATE OR REPLACE PACKAGE BODY pkg_result IS
 
   PROCEDURE addGraceMarks(sid NUMBER) IS
@@ -40,10 +36,10 @@ CREATE OR REPLACE PACKAGE BODY pkg_result IS
   END addGraceMarks;
 
   FUNCTION checkPass(sid NUMBER) RETURN BOOLEAN IS
-    stud_marks student1.marks%TYPE;
+    smarks student1.marks%TYPE;
   BEGIN
-    SELECT marks INTO stud_marks FROM student1 WHERE roll = sid;
-    IF stud_marks >= 33 THEN
+    SELECT marks INTO smarks FROM student1 WHERE roll = sid;
+    IF smarks >= 33 THEN
       RETURN TRUE;
     ELSE
       RETURN FALSE;
@@ -53,7 +49,6 @@ CREATE OR REPLACE PACKAGE BODY pkg_result IS
 END pkg_result;
 /
 
--- MAIN BLOCK
 DECLARE
   sid student1.roll%TYPE;
 BEGIN

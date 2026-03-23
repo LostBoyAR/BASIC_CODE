@@ -1,0 +1,1 @@
+mycursor.execute('insert into student1(name, roll_no, contact_no, address, email, password) values(%s,%s,%s,%s,%s,%s)', values)

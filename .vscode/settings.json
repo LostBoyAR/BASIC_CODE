@@ -100,5 +100,9 @@
     "typeinfo": "cpp",
     "LINE1.C": "cpp"
   },
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "cSpell.words": [
+    "thcd"
+  ],
+  "java.debug.settings.onBuildFailureProceed": true
 }
