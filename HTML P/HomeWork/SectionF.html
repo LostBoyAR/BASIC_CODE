@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="icon" type="image/x-icon" href="../HomeWork/AppImage/image.png">
+</head>
+<body>
+    <h1>Forms Examples</h1>
+    <hr>
+    <br>
+    <form action="" method="get">
+        <label for="name">Full Name :</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <br>
+        <label for="email">Email Address :</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <br>
+        <!-- Radio buttons for gender selection -->
+        <label>Gender :</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <br>
+        <br>
+        <!-- Checkboxes for hobbies -->
+        <label>Hobbies :</label>
+        <br>
+        <input type="checkbox" id="hobby1" name="hobby1" value="reading">
+        <label for="hobby1">Reading</label>
+        <input type="checkbox" id="hobby2" name="hobby2" value="coding">
+        <label for="hobby2">Coding</label>
+        <input type="checkbox" id="hobby3" name="hobby3" value="music">
+        <label for="hobby3">Music</label>
+        <br>
+        <input type="checkbox" id="hobby4" name="hobby4" value="movies">
+        <label for="hobby4">Movies</label>
+        <input type="checkbox" id="hobby5" name="hobby5" value="traveling">
+        <label for="hobby5">Traveling</label>
+        <input type="checkbox" id="hobby6" name="hobby6" value="sports">
+        <label for="hobby6">Sports</label>
+        <br>
+        <br>
+        <!-- Dropdown list for country selection -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="india" selected>India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="canada">Canada</option>
+        </select>
+        <br>
+        <br>
+        <!-- Submit and reset buttons -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
