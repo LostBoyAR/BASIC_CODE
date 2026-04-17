@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <form accept="" method="post" onsubmit="return Val()">
+            <label for="username">User Name :</label>
+            <input type="text" name="username" id="username">
+            <span style="color: red;" id="errusername"></span>
+            <br>
+            <br>
+            <label for="pwd">Password :</label>
+            <input type="text" name="pwd" id="pwd">
+            <span style="color: red;" id="errpwd"></span>
+            <br>
+            <br>
+            <input type="submit" name="Add" value="Add !!!">
+        </form>
+    </div>
+
+    <script>
+        function Val() {
+            let f = true;
+            let ctrUName = document.getElementById("username").value;
+            let ctrpwd = document.getElementById("pwd").value;
+
+            let errUName = document.getElementById("errusername");
+            let errpwd = document.getElementById("errpwd");
+
+            errpwd.innerHTML = "";
+            if (ctrUName == "") {
+                errUName.innerHTML = 'Please Enter User Name';
+                F = false;
+                return F;
+            }
+            if (ctrUName.length <= 3) {
+                errUName.innerHTML = 'Please Enter Valid User Name';
+                F = false;
+                return F;
+            }
+            if (ctrpwd == "") {
+                errpwd.innerHTML = 'Please Enter User Name';
+                F = false;
+                return F;
+            }
+            return F;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .buttons-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        button {
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .btn-add {
+            background-color: #4CAF50;
+            grid-column: 1;
+        }
+        
+        .btn-add:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-subtract {
+            background-color: #f44336;
+            grid-column: 2;
+        }
+        
+        .btn-subtract:hover {
+            background-color: #da190b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+        }
+        
+        .btn-multiply {
+            background-color: #FF9800;
+            grid-column: 1;
+        }
+        
+        .btn-multiply:hover {
+            background-color: #e68900;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+        
+        .btn-divide {
+            background-color: #2196F3;
+            grid-column: 2;
+        }
+        
+        .btn-divide:hover {
+            background-color: #0b7dda;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        }
+        
+        .result-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .result-label {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .result-value {
+            font-size: 28px;
+            color: #333;
+            font-weight: bold;
+            min-height: 35px;
+        }
+        
+        .error-message {
+            color: #d32f2f;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .clear-btn {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #757575;
+            font-size: 14px;
+        }
+        
+        .clear-btn:hover {
+            background-color: #616161;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        
+        <div class="input-group">
+            <label for="num1">First Number:</label>
+            <input type="text" id="num1" placeholder="Enter first number">
+        </div>
+        
+        <div class="input-group">
+            <label for="num2">Second Number:</label>
+            <input type="text" id="num2" placeholder="Enter second number">
+        </div>
+        
+        <div class="buttons-group">
+            <button class="btn-add" onclick="performAdd()">Add</button>
+            <button class="btn-subtract" onclick="performSubtract()">Subtract</button>
+            <button class="btn-multiply" onclick="performMultiply()">Multiply</button>
+            <button class="btn-divide" onclick="performDivide()">Divide</button>
+        </div>
+        
+        <div class="result-section">
+            <div class="result-label">Result:</div>
+            <div class="result-value" id="result">-</div>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+        
+        <button class="clear-btn" onclick="clearAll()">Clear</button>
+    </div>
+    
+    <script>
+        // Function to validate input
+        function validateInputs() {
+            const num1 = document.getElementById("num1").value.trim();
+            const num2 = document.getElementById("num2").value.trim();
+            const errorDiv = document.getElementById("errorMessage");
+            
+            // Check if inputs are empty
+            if (num1 === "" || num2 === "") {
+                errorDiv.textContent = "Error: Please enter both numbers";
+                errorDiv.classList.add("show");
+                return null;
+            }
+            
+            // Check if inputs are valid numbers
+            const num1Val = parseFloat(num1);
+            const num2Val = parseFloat(num2);
+            
+            if (isNaN(num1Val) || isNaN(num2Val)) {
+                errorDiv.textContent = "Error: Please enter valid numbers";
+                errorDiv.classList.add("show");
+                return null;
+            }
+            
+            // Clear error message if validation passes
+            errorDiv.classList.remove("show");
+            return { num1: num1Val, num2: num2Val };
+        }
+        
+        // Function to display result
+        function displayResult(result) {
+            document.getElementById("result").textContent = result;
+        }
+        
+        // Add function
+        function performAdd() {
+            const numbers = validateInputs();
+            if (numbers !== null) {
+                const result = numbers.num1 + numbers.num2;
+                displayResult(result);
+            }
+        }
+        
+        // Subtract function
+        function performSubtract() {
+            const numbers = validateInputs();
+            if (numbers !== null) {
+                const result = numbers.num1 - numbers.num2;
+                displayResult(result);
+            }
+        }
+        
+        // Multiply function
+        function performMultiply() {
+            const numbers = validateInputs();
+            if (numbers !== null) {
+                const result = numbers.num1 * numbers.num2;
+                displayResult(result);
+            }
+        }
+        
+        // Divide function
+        function performDivide() {
+            const numbers = validateInputs();
+            if (numbers !== null) {
+                if (numbers.num2 === 0) {
+                    const errorDiv = document.getElementById("errorMessage");
+                    errorDiv.textContent = "Error: Cannot divide by zero";
+                    errorDiv.classList.add("show");
+                } else {
+                    const result = numbers.num1 / numbers.num2;
+                    displayResult(result);
+                }
+            }
+        }
+        
+        // Clear function
+        function clearAll() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("result").textContent = "-";
+            document.getElementById("errorMessage").classList.remove("show");
+        }
+        
+        // Allow Enter key to trigger calculation
+        document.getElementById("num1").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                performAdd();
+            }
+        });
+        
+        document.getElementById("num2").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                performAdd();
+            }
+        });
+    </script>
+</body>
+</html>

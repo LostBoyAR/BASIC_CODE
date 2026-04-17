@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid"></div>
+    <script>
+        let ctr=document.getElementById("myid");
+        let Employee = {
+            Name :"Aditya Raj",
+            Age : 21,
+            City : "Patna",
+            Information : function(){
+                return "Name is "+ this.Name + " Age :"+ this.Age + " from City "+ this.City;
+            },
+            FullName: function(){
+                return "Full Name Of Employee: "+this.Name;
+            }
+        }
+        // ctr.innerHTML= Employee["Name"];
+        // ctr.innerHTML= Employee.Name;
+        // ctr.innerHTML= Employee.Information();
+        ctr.innerHTML= Employee.FullName();
+    </script>
+</body>
+</html>

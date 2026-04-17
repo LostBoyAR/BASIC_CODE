@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid"></div>
+    <script>
+        let ctr=document.getElementById("myid");
+        let GST=10;
+        switch(GST)
+        {
+            case 10:
+                ctr.innerHTML="I am Case 10";
+                break;
+            case 18:
+                ctr.innerHTML="I am Case 18";
+                break;
+            case 28:
+                ctr.innerHTML="I am Case 28";
+                break;
+            default:
+                ctr.innerHTML="Invalid GST";
+        }
+    </script>
+</body>
+</html>

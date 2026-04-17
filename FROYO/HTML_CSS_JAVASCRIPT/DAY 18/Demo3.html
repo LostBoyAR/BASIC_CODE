@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Num 1: <input type="text" name="n1" id="n1"><br><br>
+    Num 2: <input type="text" name="n2" id="n2"><br><br>
+    <button onclick="add()">Add</button>
+    <hr>
+    <div id="myid"></div>
+    <script>
+        let ctr=document.getElementById("myid");
+
+        function add(){
+            let Num1=parseFloat(document.getElementById("n1").value);
+            let Num2=parseFloat(document.getElementById("n2").value);
+            ctr.innerHTML +=(Num1+Num2)+"<br>";
+        }
+    </script>
+</body>
+</html>

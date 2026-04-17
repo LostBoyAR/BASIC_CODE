@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid"></div>
+    <hr>
+    <script>
+        let ND = new Date();
+        let Employee = {
+            Name: "Aditya Raj",
+            Age: 21,
+            City:"Patna"
+        }
+        let ctr=document.getElementById("myid");
+
+        let d=new Date(2002/12/12);
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        ctr.innerHTML +=d +"<br>";
+        d.setFullYear(2028);
+        d.setDate(25);
+        d.setMonth(7);
+        ctr.innerHTML +=d.getFullYear()+"<br>";
+        ctr.innerHTML +=d.getDate()+"<br>";
+        ctr.innerHTML +=d.getMonth()+"<br>";
+        ctr.innerHTML +=months[d.getMonth()]+"<br>";
+    </script>
+</body>
+</html>

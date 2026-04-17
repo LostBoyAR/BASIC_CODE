@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid"></div>
+    <hr>
+    <!-- <button onclick="add()">Call Function</button> -->
+    <script>
+        // let ctr=document.getElementById("myid");
+        // function add()
+        // {
+        //     let x=10;
+        //     let y=20;
+        //     return x+y;
+        // }
+        // ctr.innerHTML=add();
+        // let ctr=document.getElementById("myid");
+        // function add(x=5,y=300)
+        // {
+        //     return x+y;
+        // }
+        // ctr.innerHTML +=add(10,20)+"<br>";
+        // ctr.innerHTML +=add(1,2)+"<br>";
+        // ctr.innerHTML +=add(1)+"<br>";
+        // ctr.innerHTML +=add()+"<br>";
+        // let ctr=document.getElementById("myid");
+        // let call=function (x=1,y=2)
+        // { 
+        //     return x+y;
+        // }
+        // ctr.innerHTML +="Type of :"+typeof(call)+"<br>";
+        // ctr.innerHTML +=call(10,20)+"<br>";
+        let ctr=document.getElementById("myid");
+        let call=(x,y) => { return x+y;}
+        let Company=() => { return "Macliys";}
+        ctr.innerHTML +="Type of :"+typeof(call)+"<br>";
+        ctr.innerHTML +=call(10,20)+"<br>";
+        ctr.innerHTML +=Company()+"<br>";
+    </script>
+</body>
+</html>

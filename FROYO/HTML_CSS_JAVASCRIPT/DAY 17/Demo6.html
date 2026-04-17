@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid"></div>
+    <hr>
+    <script>
+        let ctr=document.getElementById("myid");
+
+        let text1="Aditya Raj";
+        let text2="From Bihar";
+        ctr.innerHTML +=text1.length+"<br>";
+        ctr.innerHTML +=text1.concat(" - ",text2)+"<br>";
+        ctr.innerHTML +=text1.toLocaleLowerCase()+"<br>";
+        ctr.innerHTML +=text1.toLocaleUpperCase()+"<br>";
+        ctr.innerHTML +=text1[8]+"<br>";
+        ctr.innerHTML +=text1[7]+"<br>";
+        let text3="               Raja";
+        ctr.innerHTML +=text3.trim()+"<br>";
+        ctr.innerHTML +=text3.trimLeft()+"<br>";
+        ctr.innerHTML +=text3.trimRight()+"<br>";
+        ctr.innerHTML +=text1.substr(3,4)+"<br>";
+        ctr.innerHTML +=text3.trim()+"<br>";
+        ctr.innerHTML +=text1.repeat(3)+"<br>";
+        let amount="1023";
+        ctr.innerHTML +=amount.padStart(4,"-")+"<br>";
+        ctr.innerHTML +=amount.padEnd(4,"-")+"<br>";
+        ctr.innerHTML +=text1.replace("Raj","------")+"<br>";
+        ctr.innerHTML +=text1.replaceAll("Raj","------")+"<br>";
+        let arr=text1.split("");
+        for(let index = 0; index < arr.length; index++){
+            ctr.innerHTML += "["+index+"] = " +arr[index]+"<br>";
+        }
+    </script>
+</body>
+</html>

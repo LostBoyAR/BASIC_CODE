@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid"></div>
+    <hr>
+    <!-- <button onclick="add()">Call Function</button> -->
+    <script>
+        let ctr=document.getElementById("myid");
+        let x=10;
+        let Data=["Aditya",21,"Raj",25,87];
+        Data[0]="Piyush";
+        // ctr.innerHTML +=Data.length+"<br>";
+        // ctr.innerHTML +=Array.isArray(x);
+        for(let i = 0; i < Data.length; i++){
+            ctr.innerHTML +="i ="+ i + " Value :" + Data[i] + "<br>";
+        }
+    </script>
+</body>
+</html>

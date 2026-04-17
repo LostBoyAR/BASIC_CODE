@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myid"></div>
+    <hr>
+    <!-- <button onclick="add()">Call Function</button> -->
+    <script>
+        let ctr=document.getElementById("myid");
+        let Num=[2,4,6,8,10,12,14,16,18,20];
+        // for(const key in Num){
+        //     ctr.innerHTML +="["+key+"] =" + Num[key] + "<br>";
+        // }
+        for(const value of Num){
+            ctr.innerHTML += value + "<br>";
+        }
+    </script>
+</body>
+</html>

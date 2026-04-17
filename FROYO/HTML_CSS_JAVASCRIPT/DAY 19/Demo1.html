@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="AddUser" id="AddUser" onsubmit="return Val()">
+        <label for="FullName">Full Name :</label>
+        <input type="text" name="FullName" id="FullName">
+        <span style="color: red;" id="errFullName"></span>
+        <br>
+        <br>
+        <label for="Mobile">Mobile :</label>
+        <input type="text" name="Mobile" id="Mobile">
+        <span style="color: red;" id="errMobile"></span>
+        <br>
+        <br>
+        <label for="Email">Email :</label>
+        <input type="text" name="Email" id="Email">
+        <span style="color: red;" id="errEmail"></span>
+        <br>
+        <br>
+        <input type="submit" name="Add" value="Add !!!">
+    </form>
+
+    <script>
+        function Val(){
+            let f = true;
+            let ctrFName = document.getElementById("FullName").value;
+            let errFName = document.getElementById("errFullName");
+            errFName.innerHTML = "";
+            if(ctrFName == ""){
+                errFName.innerHTML = 'Please Enter Your Full Name';
+                F = false;
+                return F;
+            }
+            let ctrMobile = document.getElementById("Mobile").value;
+            let errMobile = document.getElementById("errMobile");
+            errMobile.innerHTML="";
+            if (ctrMobile == "") {
+                errMobile.innerHTML = 'Please Enter Your Mobile Number';
+                F = false;
+                return F;
+            }
+            if (isNaN(ctrMobile)) {
+                errMobile.innerHTML = 'Please Enter Your Valid Mobile Number';
+                F = false;
+                return F;
+            }
+            if (ctrMobile.length != 10) {
+                errMobile.innerHTML = 'Please Enter Your 10 digit Mobile Number';
+                F = false;
+                return F;
+            }
+            let ctrEmail = document.getElementById("Email").value;
+            let errEmail = document.getElementById("errEmail");
+            errEmail.innerHTML = "";
+            if (ctrEmail == "") {
+                errEmail.innerHTML = 'Please Enter Your Email Address';
+                F = false;
+                return F;
+            }
+            if (ctrEmail != "") {
+                let atPos = ctr = ctrEmail.indexOf("@");
+                let dotPos = ctrEmail.lastIndexOf(".");
+                if (!(atPos<dotPos-2 && atPos> 2 && dotPos< ctrEmail.length-2)) {
+                    errEmail.innerHTML = 'Please Enter Your Email Address';
+                    F = false;
+                    return F;
+                }
+            }
+            return F;
+        }
+    </script>
+</body>
+</html>
